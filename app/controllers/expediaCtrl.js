@@ -1,6 +1,7 @@
 
 var apiHttp = require('./apiHttpCtrl.js');
-
+var utility = require('./utilityCtrl.js');
+// Places of interest related functions begin       loc=Boston&startDate=2016-08-08&endDate=2016-08-18
 // parse the url to get the parameters passed for poiList function
 var getParamsForPOIList = function(req){
 	var params = {};
@@ -13,7 +14,8 @@ var getParamsForPOIList = function(req){
 	if (req.query.endDate) {
 		params.endDate = req.query.endDate ;
 	}
-	params.apikey = 'p51QC1202PUBAASNULhQG2ukBtAe8hpd';
+	
+	params.apikey = _apiConfigs.TravPlan_ThingsToDo_publicKey; 
 	return params;
 }
 
@@ -26,12 +28,40 @@ exports.getPOIList = function(req,res){
 	
 	var params = getParamsForPOIList(req);
 	apiHttp.httpRequest(
-	'terminal2.expedia.com' ,
-	'/x/activities/search',
+	_apiConfigs.Expedia_API_DOMAIN_URL ,
+	_apiConfigs.TravPlan_ThingsToDo_Path_URL,
 	'GET',
 	params,
 	null,
 	placesOfInterestSuccessCallBack
 	);
 	
+};
+
+
+// Flight search related function begins   departureDate=2016-08-08&fromAirport=MSN&toAirport=LAX
+
+var getParamsForAllFlights = function(req){
+	var params = {};
+	params.departureDate = req.query.departureDate ;
+	params.departureAirport = req.query.fromAirport;
+	params.arrivalAirport = req.query.toAirport;
+	params.apikey = _apiConfigs.TravPlan_FlightSearch_publicKey;
+	return params;
+}
+exports.getAllFlights = function(req,res){
+	var getAllFlightsSuccessCallBack = function(data){
+		res.json(data);
+	}
+	
+	var params = getParamsForAllFlights(req);
+	
+	apiHttp.httpRequest(
+	_apiConfigs.Expedia_API_DOMAIN_URL ,
+	_apiConfigs.TravPlan_FlightSearch_Path_URL,
+	'GET',
+	params,
+	null,
+	getAllFlightsSuccessCallBack
+	);
 };

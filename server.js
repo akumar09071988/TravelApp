@@ -6,7 +6,11 @@ var methodOverride = require('method-override');
 var mongoose       = require('mongoose');
 
 // configuration ===========================================
-    
+// global values 
+global.__base = __dirname + '/';  
+global._apiConfigs =  require('./config/apiConfig.js');
+
+
 // config files
 //var db = require('./config/db');
 //mongoose.connect(db.url);

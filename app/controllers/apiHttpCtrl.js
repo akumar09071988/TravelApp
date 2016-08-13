@@ -8,6 +8,15 @@ exports.httpRequest = function(host ,path , method, data, port, successCallBack)
 	if (data != null) {
 		path += '?' + queryString.stringify(data);
 	}
+	if (method == 'GET') {
+     //endpoint += '?' + querystring.stringify(data);
+   } else {
+    headers = {
+		  'Content-Type': 'application/json',
+		  'Content-Length': dataString.length,
+		  'Accept' : 'application/json'
+      };
+    }
 
 	var options = {} ; 
 	options.hostname = host;
@@ -26,6 +35,7 @@ exports.httpRequest = function(host ,path , method, data, port, successCallBack)
         var responseString = '';
 
 		response.on('data', function(data) {
+		  //console.log(data);
 		  responseString += data;
 		});
 
