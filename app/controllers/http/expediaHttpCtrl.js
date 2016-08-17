@@ -1,6 +1,8 @@
+var PATH = include('pathConfig.js') ;
 
-var apiHttp = require('./apiHttpCtrl.js');
-var utility = require('./utilityCtrl.js');
+var apiHttp = include(PATH.PATH.API_HTTP_CTRL);
+
+
 // Places of interest related functions begin       loc=Boston&startDate=2016-08-08&endDate=2016-08-18
 // parse the url to get the parameters passed for poiList function
 var getParamsForPOIList = function(req){
@@ -20,11 +22,7 @@ var getParamsForPOIList = function(req){
 }
 
 // get places of interest for a given  location , startDate, endDate
-exports.getPOIList = function(req,res){
-	
-	var placesOfInterestSuccessCallBack = function(data) {
-	  res.json(data);
-    };
+exports.getPOIList = function(req,successCallback){
 	
 	var params = getParamsForPOIList(req);
 	apiHttp.httpRequest(
@@ -33,7 +31,7 @@ exports.getPOIList = function(req,res){
 	'GET',
 	params,
 	null,
-	placesOfInterestSuccessCallBack
+	successCallback
 	);
 	
 };
@@ -49,10 +47,7 @@ var getParamsForAllFlights = function(req){
 	params.apikey = _apiConfigs.TravPlan_FlightSearch_publicKey;
 	return params;
 }
-exports.getAllFlights = function(req,res){
-	var getAllFlightsSuccessCallBack = function(data){
-		res.json(data);
-	}
+exports.getAllFlights = function(req,successCallback){
 	
 	var params = getParamsForAllFlights(req);
 	
@@ -62,6 +57,6 @@ exports.getAllFlights = function(req,res){
 	'GET',
 	params,
 	null,
-	getAllFlightsSuccessCallBack
+	successCallback
 	);
 };
