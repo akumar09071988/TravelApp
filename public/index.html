@@ -1,0 +1,297 @@
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<title>Jai Jagannath</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<link rel="stylesheet" type="text/css" href="css/style.css">
+			<link rel="stylesheet" type="text/css" href="css/datepicker.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+			<script src="controllers/controller.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!--		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<!-- Optional theme -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+			<script src="js/bootstrap-datepicker.js"></script>
+			<script src="js/date.js"></script>
+		</head>
+		<body>
+			<nav class="nav-navbar navbar-inverse" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!--<a class="navbar-brand changeFont" color="black" href="#">Home</a>-->
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a class="changeFont2" href="#about-us">About</a>
+							</li>
+							<li>
+								<a class="changeFont2" href="#">Services</a>
+							</li>
+							<li>
+								<a class="changeFont2" href="#">Contact</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a class="changeFont2" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+							<li><a class="changeFont2" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container -->	
+			</nav>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+				<!--	<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>-->
+				</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<div class="overlay"><h1>Travel</h1>
+						<h3>Personlize your travel</h3>
+						<p>Grab the best routes</p>
+						<a class="btn btn-primary" href="#" role="button">Now</a>
+						<br>
+						<br>
+						<form name="introForm" class="form" role="form" method="get" action="#about-us">
+							<div class="row">
+								<div class="col-sm-3"></div>
+								<div class="col-sm-3">
+									<div class="input-group">
+										<span class="input-group-addon glyphicon glyphicon-home" id="basic-addon1"></span>
+										<input type="text" class="form-control" placeholder="Home city.." aria-describedby="basic-addon2">
+										<span class="input-group-addon" id="basic-addon2" align="center" style="color:white;font-weight:bold;background:LightSeaGreen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="input-group">
+										<span class="input-group-addon glyphicon glyphicon-globe" id="basic-addon1"></span>
+										<input type="text" class="form-control" placeholder="Travel to.." aria-describedby="basic-addon2">
+										<span class="input-group-addon" id="basic-addon2" style="color:white;font-weight:bold;background:LightSeaGreen">&nbsp;Destination</span>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-sm-3"></div>
+								<div class="col-sm-3">
+									<div class="input-group">
+										<span class="input-group-addon glyphicon glyphicon-calendar" id="basic-addon1"></span>
+										<input type="text" class="form-control datepicker" placeholder="Enter your start on.." aria-describedby="basic-addon2">
+										<span class="input-group-addon" id="basic-addon2" style="color:white;font-weight:bold;background:LightSeaGreen">Start Trip&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="input-group">
+										<span class="input-group-addon glyphicon glyphicon-calendar" id="basic-addon1"></span>
+										<input type="text" class="form-control datepicker" placeholder="When you are back home.." aria-describedby="basic-addon2">
+										<span class="input-group-addon" id="basic-addon2" style="color:white;font-weight:bold;background:LightSeaGreen">Back Home</span>
+									</div>
+								</div>
+							</div>
+							<br>
+							<br>
+							<br>
+							<div class="find">
+								<button	class="btn btn-warning" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;Go&nbsp;&nbsp;&nbsp;&nbsp;</button>	
+							</div>
+						</form>	
+					</div>
+					<img src="images/image03.jpg">
+				</div>
+				<div class="item">
+					<div class="overlay"><h1>Save your space</h1>
+						<h3>Personlize your stay</h3>
+						<p>Find the best deals</p>
+						<a class="btn btn-primary" href="#" role="button">Now</a>
+						<br>
+						<br>
+						<form name="introForm" class="form" role="form" method="get" action="#about-us">
+							<div class="row">
+								<div class="col-sm-3"></div>
+								<div class="col-sm-3">
+									<div class="input-group">
+										<span class="input-group-addon glyphicon glyphicon-home" id="basic-addon1"></span>
+										<input type="text" class="form-control" placeholder="Home city.." aria-describedby="basic-addon2">
+										<span class="input-group-addon" id="basic-addon2" align="center" style="color:white;font-weight:bold;background:LightSeaGreen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="input-group">
+										<span class="input-group-addon glyphicon glyphicon-globe" id="basic-addon1"></span>
+										<input type="text" class="form-control" placeholder="Travel to.." aria-describedby="basic-addon2">
+										<spanx class="input-group-addon" id="basic-addon2" style="color:white;font-weight:bold;background:LightSeaGreen">&nbsp;Destination</spanx>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-sm-3"></div>
+								<div class="col-sm-3">
+									<div class="input-group">
+										<span class="input-group-addon glyphicon glyphicon-calendar spanStyle" id="basic-addon1"></span>
+										<input type="text" class="form-control datepicker" placeholder="Enter your start on.." aria-describedby="basic-addon2">
+										<span class="input-group-addon" id="basic-addon2" style="color:white;font-weight:bold;background:LightSeaGreen;">Start Trip&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="input-group">
+										<span class="input-group-addon glyphicon glyphicon-calendar" id="basic-addon1"></span>
+										<input type="text" class="form-control datepicker" placeholder="When you are back home.." aria-describedby="basic-addon2">
+										<span class="input-group-addon" id="basic-addon2" style="color:white;font-weight:bold;background:LightSeaGreen">Back Home</span>
+									</div>
+								</div>
+							</div>
+							<br>
+							<br>
+							<br>
+							<div class="find">
+								<button	class="btn btn-warning" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;Go&nbsp;&nbsp;&nbsp;&nbsp;</button>	
+							</div>
+						</form>	
+					</div>
+					<img src="images/image03.jpg">
+				</div>
+			</div>
+		</div>
+		<section id="service" class="our-service hidden">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">                
+                        <p class="small-tag">What we offer</p>
+                        <h2 class="section-title">Our Services</h2>
+                        <div class="border"><span class="border-l-r"><i class="lnr lnr-diamond"></i></span></div>
+                        <p class="section-para">Lorem ipsum dolor sit amet, consectetuer adiping elit agrel. Donec odio. 
+                        Quisque volutpat mattis eros. Nullam malesuada urna nibh viverra non.</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="four-slide">
+                            <div class="single-slide"><img src="images/service-1.jpg" alt="">
+                                <div class="service-overflow text-center">
+                                    <h3>Responsive</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit agrel. 
+                                    Donec odio. Quisque volutpat mattis eros.  Rerat ut turpis.</p>
+                                </div>
+                            </div>
+                            <div class="single-slide"><img src="images/service-2.jpg" alt="">
+                                <div class="service-overflow text-center">
+                                    <h3>Web Design</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit agrel. 
+                                    Donec odio. Quisque volutpat mattis eros.  Rerat ut turpis.</p>
+                                </div>
+                           
+                            <div class="single-slide"><img src="images/service-4.jpg" alt="">
+                                <div class="service-overflow text-center">
+                                    <h3>Wordpress</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit agrel. 
+                                    Donec odio. Quisque volutpat mattis eros.  Rerat ut turpis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+		<section id="about-us" class="about-us">
+			<div id="about-us1" class="container" ng-app="meanApp" ng-controller="meanCtrl">
+			<h1>Choose from the list of Itinerary</h1>
+				<table class="table">
+					<thead>
+					<tr>
+					<th>Vendor</th>
+					<th>Duration</th>
+					<th>Price</th>
+					<th>Stops</th>
+					<th>Arrival</th>
+					<th>Departure</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="travel in travelList">
+								<td>{{travel.dataSrc}}</td>
+								<td>{{travel.travelDuration}}</td>
+								<td>{{travel.totalPrice}}</td>
+								<td>{{travel.numStops}}</td>
+								<td>{{travel.departTime}}</td>
+								<td>{{travel.arrivalTime}}</td>
+								<td><button class="btn btn-warning" ng-click="editContact(contact._id)">Book</td>
+						</tr>	
+						</tbody>
+					</table>
+				</div>
+        </section>
+        <section class="talk-about-us hidden">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-xs-12 text-center"> 
+                        <p class="small-tag">Our Clients</p>
+                        <h2 class="section-title">Talk About Us</h2>
+                        <div class="border"><span class="border-l-r"><i class="fa fa-quote-right"></i></span></div>
+                        
+                        <div id="talk-about-us" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#talk-about-us" data-slide-to="0" class="active"></li>
+                                <li data-target="#talk-about-us" data-slide-to="1"></li>
+                                <li data-target="#talk-about-us" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <p>Lorem ipsum dolor sit amet reprehenderit, enim eiusmod high life 
+                                    accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard 
+                                    dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Haccusamus terry richardson ad squid.
+                                    Penon cupidatat skateboard.</p>
+                                    <strong>Jessy Roy, CEO </strong>
+                                </div>
+                                <div class="item">
+                                    <p>Lorem ipsum dolor sit amet reprehenderit, enim eiusmod high life 
+                                    accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard 
+                                    dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Haccusamus terry richardson ad squid.
+                                    Penon cupidatat skateboard.</p>
+                                    <strong>Jessy Roy, CEO </strong>
+                                </div>
+                                <div class="item">
+                                    <p>Lorem ipsum dolor sit amet reprehenderit, enim eiusmod high life 
+                                    accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard 
+                                    dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Haccusamus terry richardson ad squid.
+                                    Penon cupidatat skateboard.</p>
+                                    <strong>Jessy Roy, CEO </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-md-12 text-center">
+                        <p>Designed By MutthuCorp</p>
+                        <p>Copyright 2016. All Rights Reserved.</p>
+                        <span><a href="#home" class="scroll"><i class="lnr lnr lnr-exit-up"></i></a></span>
+                    </div>
+                </div>
+            </div>    
+        </footer>
+</body>
+</html>
