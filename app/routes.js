@@ -10,7 +10,12 @@ module.exports = function (app) {
 	app.route('/travPlan/expedia/flights/all')
 	.get(expediaController.getAllFlights);
 	
-	app.route('/travPlan/transit/public/all')
-	.get(publicTransitController.getAllPublicTransit);
+    app.route('/travPlan/transit/public/all')
+	.get(googleTransitController.getAllPublicTransit);
+	
+    app.route('/travelList')
+    .get(expediaController.getDummyData);	
+
+
 
 };
