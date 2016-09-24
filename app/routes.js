@@ -16,6 +16,7 @@ module.exports = function (app) {
     app.route('/travelList')
     .get(expediaController.getDummyData);	
 
-
+    app.route('/travPlan/expedia/hotels/all')
+	.get(expediaController.getHotelsAll);
 
 };

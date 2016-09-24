@@ -11,4 +11,4 @@ exports.getAllPublicTransit = function(req,res){
 	}
 	googleHttp.getPublicTransitWays(req,publicTransitSuccessCallBack);
 	
-};
+}; 

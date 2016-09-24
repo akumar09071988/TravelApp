@@ -1,0 +1,20 @@
+{
+'01#04' : [
+       { "hotelId": "918545",
+		"name": "Hotel dummy1",
+		"address": "Address1",
+		"city": "Boston",
+		"country":"USA",
+		"lowRateInfo" : {
+		"totalPriceWithMandatoryFees" : "100"}
+		},
+		{ "hotelId": "918546",
+		"name": "Hotel dummy2",
+		"address": "Address2",
+		"city": "Boston",
+		"country":"USA",
+		"lowRateInfo" : {
+		"totalPriceWithMandatoryFees" : "101"}
+		}
+]
+}

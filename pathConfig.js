@@ -7,5 +7,7 @@ exports.PATH = {
 	TRAVEL_FLIGHT_MODEL : './app/models/travelFlightModel.js' ,
 	GOOGLE_HTTP_CTRL : './app/controllers/http/googleHttpCtrl.js' ,
     GOOGLE_TRANSIT_LOGIC_CTRL : './app/controllers/logic/googleTransitLogicCtrl.js' ,
-
+	TRAVEL_ACCO_MODEL : './app/models/accomodation.js' ,
+	// mock path
+    API_MOCK  : './mock/mock.js'
 };

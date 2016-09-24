@@ -9,7 +9,10 @@ var mongoose = require('mongoose');
 // global values
 global.__base = __dirname + '/';
 global._apiConfigs = require('./config/apiConfig.js');
-
+global._mock = true;
+if (global._mock) {
+	global._mockConfigs = require('./mock/mockConfig.js');
+}
 // config files
 
 // functionality for importing from root

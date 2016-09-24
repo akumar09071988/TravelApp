@@ -2,6 +2,8 @@ var PATH = include('pathConfig.js');
 
 var expediaHttp = include(PATH.PATH.EXPEDIA_HTTP_CTRL);
 var travelFlightModel = include(PATH.PATH.TRAVEL_FLIGHT_MODEL);
+var travelFlightModel = include(PATH.PATH.TRAVEL_FLIGHT_MODEL);
+var accomodationModel = include(PATH.PATH.TRAVEL_ACCO_MODEL);
 // Places of interest related functions begin       loc=Boston&startDate=2016-08-08&endDate=2016-08-18
 
 // get places of interest for a given  location , startDate, endDate
@@ -195,4 +197,32 @@ exports.getDummyData = function (req, res)  {
 	
 	res.json(travelOptionJSON);
 	
+};
+
+var processHotelApiResponse = function(data) {
+	var resultArr = [];
+	for (var i =0;i<data.hotelList.length;i++) {
+		var hotel = data.hotelList[i];
+		var tempAccoObj = new accomodationModel('EXPEDIA');
+		resultArr.push(tempAccoObj.convertHotelExpediaData(hotel));
+	}
+	
+	resultArr.sort(accomodationModel.sortByTotalPrice);
+	return resultArr;
+};
+
+var  isMultiple = function (req) {
+	if(req.query,mutiple && req.query.mutiple === 'Y') {
+		return true;
+	}
+	return false;
+};
+exports.getHotelsAll = function(req,res) {
+	if (isMultiple(req)) {
+		
+	}
+	var hotelSuccessCallBack = function(data) {
+		res.json(processHotelApiResponse(data));
+	}
+	expediaHttp.getAllHotels(req, hotelSuccessCallBack);
 };

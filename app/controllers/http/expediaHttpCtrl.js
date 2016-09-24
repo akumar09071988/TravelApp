@@ -47,16 +47,41 @@ var getParamsForAllFlights = function(req){
 	params.apikey = _apiConfigs.TravPlan_FlightSearch_publicKey;
 	return params;
 }
-exports.getAllFlights = function(req,successCallback){
+exports.getAllFlights = function(req,flightSuccessCallback){
 	
 	var params = getParamsForAllFlights(req);
-	
+	if (_mock) {
+		var mockFunc = include(PATH.PATH.API_MOCK);
+		var data = mockFunc.mockFunction(_mockConfigs.EXPEDIA_FLIGHT_ALL);
+		flightSuccessCallback(data);
+		return;
+	}
 	apiHttp.httpRequest(
 	_apiConfigs.Expedia_API_DOMAIN_URL ,
 	_apiConfigs.TravPlan_FlightSearch_Path_URL,
 	'GET',
 	params,
 	null,
-	successCallback
+	flightSuccessCallback
 	);
+};
+
+//Hotel Search 
+
+// to be written later
+var getParamsForAllHotels = function(req) {
+	var params = {};
+	params.start  = req.query.start;
+	params.To = req.query.end; 
+	return params;
+};
+
+exports.getAllHotels = function(req, hotelSuccessCallBack) {
+	var params = getParamsForAllHotels(req);
+	if (_mock) {
+		var mockFunc = include(PATH.PATH.API_MOCK);
+		var data = mockFunc.mockFunction(_mockConfigs.EXPEDIA_HOTEL);
+		hotelSuccessCallBack(data);
+		return;
+	}
 };
